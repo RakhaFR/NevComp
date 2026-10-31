@@ -14,7 +14,7 @@
 <body class="min-h-screen bg-white font-sans text-ink antialiased flex flex-col justify-between">
     <div>
         <header class="relative z-10 shadow-md bg-white">
-            <div class="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:h-17 lg:px-12">
+            <div class="mx-auto flex h-16 max-w-360 items-center justify-between px-4 sm:px-6 lg:h-17 lg:px-12">
                 <a href="{{ route('schedules.index') }}"
                     class="flex items-center gap-1.5 text-xl font-bold text-brand sm:text-2xl">
                     <x-icon name="train" class="size-6 text-ink sm:size-7" /> TRAINTIX
@@ -33,17 +33,17 @@
 
                         <form method="POST" action="{{ route('logout') }}" class="inline">
                             @csrf
-                            <x-button type="submit" class="h-9 px-4 sm:w-[115px]">Keluar</x-button>
+                            <x-button type="submit" class="h-9 px-4 sm:w-28.75">Keluar</x-button>
                         </form>
                     @else
                         <a href="{{ route('login') }}" class="text-sm font-semibold hover:text-brand">Masuk</a>
-                        <x-button :href="route('register')" class="h-9 px-4 sm:w-[115px]">Daftar</x-button>
+                        <x-button :href="route('register')" class="h-9 px-4 sm:w-28.75">Daftar</x-button>
                     @endauth
                 </div>
             </div>
         </header>
 
-        <main class="mx-auto max-w-[1440px] px-4 pb-16 sm:px-6 lg:px-12">
+        <main class="mx-auto max-w-360 px-4 pb-16 sm:px-6 lg:px-12">
             <x-flash />
             @yield('content')
         </main>
